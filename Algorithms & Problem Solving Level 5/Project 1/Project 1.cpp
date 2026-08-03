@@ -13,7 +13,7 @@ int main()
     MyDblLinkedList.InsertAtBeginning(3);
     MyDblLinkedList.InsertAtBeginning(2);
     MyDblLinkedList.InsertAtBeginning(1);
-
+    
     cout << "Linked List Content:\n";
     MyDblLinkedList.Print();
 
@@ -56,6 +56,15 @@ int main()
     MyDblLinkedList.Print();
 
     cout << "\nNumber Of Item In The Linked List = " << MyDblLinkedList.Size();
+
+    if (MyDblLinkedList.IsEmpty())
+    {
+        cout << "\nYes, List is Empty.\n";
+    }
+    else
+    {
+        cout << "\nNo, List isn't Empty.\n";
+    }
 
     system("pause>0");
     return 0;

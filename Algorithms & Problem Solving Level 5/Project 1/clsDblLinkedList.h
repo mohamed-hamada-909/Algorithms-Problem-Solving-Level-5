@@ -157,6 +157,11 @@ public:
 		return _Size;
 	}
 
+	bool IsEmpty()
+	{
+		return _Size == 0;
+	}
+
 	Node* Find(T value)
 	{
 		Node* current = head;
