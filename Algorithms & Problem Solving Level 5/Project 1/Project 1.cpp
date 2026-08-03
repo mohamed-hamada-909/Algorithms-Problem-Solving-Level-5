@@ -66,6 +66,10 @@ int main()
         cout << "\nNo, List isn't Empty.\n";
     }
 
+    clsDblLinkedList<int>::Node* N3;
+    N3 = MyDblLinkedList.GetNode(1);
+    cout << "Node Value is: " << N3->value << "\n";
+
     system("pause>0");
     return 0;
 }

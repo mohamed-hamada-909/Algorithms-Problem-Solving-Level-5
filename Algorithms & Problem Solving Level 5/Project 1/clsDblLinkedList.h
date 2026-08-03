@@ -188,6 +188,28 @@ public:
 		}
 	}
 
+	Node* GetNode(int index)
+	{
+		if (index > _Size - 1 || index < 0)
+		{
+			return nullptr;
+		}
+
+		int counter = 0;
+		Node* current = head;
+
+		while (current != nullptr)
+		{
+			if (counter == index)
+			{
+				return current;
+			}
+			current = current->next;
+			counter++;
+		}
+		return current;
+	}
+
 	Node* Find(T value)
 	{
 		Node* current = head;
