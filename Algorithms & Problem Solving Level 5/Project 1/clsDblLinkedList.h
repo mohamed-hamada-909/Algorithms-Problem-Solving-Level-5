@@ -61,6 +61,19 @@ public:
 		_Size++;
 	}
 
+	bool InsertAfter(int index, T value)
+	{
+		Node* ItemNode = GetNode(index);
+		
+		if (ItemNode != nullptr)
+		{
+			InsertAfter(ItemNode, value);
+			return true;
+		}
+		else
+			return false;
+	}
+
 	void InsertAtEnd(T value)
 	{
 		Node* new_node = new Node();
