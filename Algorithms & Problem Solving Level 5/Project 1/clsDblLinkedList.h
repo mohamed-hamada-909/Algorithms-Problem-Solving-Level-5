@@ -210,7 +210,7 @@ public:
 		return current;
 	}
 
-	void GetItem(int index)
+	T GetItem(int index)
 	{
 		Node* ItemNode = GetNode(index);
 
@@ -222,6 +222,19 @@ public:
 		{
 			return ItemNode->value;
 		}
+	}
+
+	bool UpdateItem(int index, T new_value)
+	{
+		Node* Item = GetNode(index);
+
+		if (Item != nullptr)
+		{
+			Item->value = new_value;
+			return true;
+		}
+		else
+			return false;
 	}
 
 	Node* Find(T value)
