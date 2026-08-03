@@ -210,6 +210,20 @@ public:
 		return current;
 	}
 
+	void GetItem(int index)
+	{
+		Node* ItemNode = GetNode(index);
+
+		if (ItemNode == nullptr)
+		{
+			return nullptr;
+		}
+		else
+		{
+			return ItemNode->value;
+		}
+	}
+
 	Node* Find(T value)
 	{
 		Node* current = head;
