@@ -9,10 +9,11 @@ class clsDynamicArray
 {
 protected:
 	int _space = 0;
+	T* _TempArray;
 
 public:
 
-	T* _Array;
+	T* _OriginalArray;
 
 	clsDynamicArray(int size = 0)
 	{
@@ -20,12 +21,12 @@ public:
 			size = 0;
 
 		_space = size;
-		_Array = new T[_space];
+		_OriginalArray = new T[_space];
 	}
 
 	~clsDynamicArray()
 	{
-		delete[] _Array;
+		delete[] _OriginalArray;
 	}
 
 	bool SetItem(int index, T value)
@@ -35,7 +36,7 @@ public:
 			return false;
 		}
 
-		_Array[index] = value;
+		_OriginalArray[index] = value;
 		return true;
 	}
 
@@ -53,7 +54,29 @@ public:
 	{
 		for (short i = 0; i < _space; i++)
 		{
-			cout << _Array[i] << " ";
+			cout << _OriginalArray[i] << " ";
 		}
+	}
+
+	void Resize(int size)
+	{
+		if (size < 0)
+		{
+			size = 0;
+		}
+
+		_TempArray = new T[size];
+
+		if (size < _space)
+			_space = size;
+
+		for (int i = 0; i < _space; i++)
+		{
+			_TempArray[i] = _OriginalArray[i];
+		}
+		
+		_space = size;
+		delete[]_OriginalArray;
+		_OriginalArray = _TempArray;
 	}
 };
