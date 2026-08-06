@@ -79,4 +79,31 @@ public:
 		delete[]_OriginalArray;
 		_OriginalArray = _TempArray;
 	}
+
+	T GetItem(int index)
+	{
+		return _OriginalArray[index];
+	}
+
+	void Reverse()
+	{
+		_TempArray = new T[_space];
+		int counter = 0;
+
+		for (int i = _space - 1; i >= 0; i--)
+		{
+			_TempArray[counter] = _OriginalArray[i];
+			counter++;
+		}
+		delete[] _OriginalArray;
+		_OriginalArray = _TempArray;
+	}
+	
+	void Clear()
+	{
+		_space = 0;
+		_TempArray = new T[0];
+		delete[] _OriginalArray;
+		_OriginalArray = _TempArray;
+	}
 };
