@@ -136,11 +136,38 @@ public:
 
 	void DeleteFirstItem()
 	{
-		return DeleteItem(0);
+		DeleteItem(0);
 	}
 
 	void DeleteLastItem()
 	{
-		return DeleteItem(_space - 1);
+		DeleteItem(_space - 1);
+	}
+
+	int Find(T value)
+	{
+		for (int i = 0; i < _space; i++)
+		{
+			if (_OriginalArray[i] == value)
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	bool DeleteItemByValue(T value)
+	{
+		int ToDelete = Find(value);
+		
+		if (ToDelete == -1)
+		{
+			return false;
+		}
+		else
+		{
+			DeleteItem(ToDelete);
+			return true;
+		}
 	}
 };

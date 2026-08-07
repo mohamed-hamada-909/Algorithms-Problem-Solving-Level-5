@@ -34,6 +34,20 @@ int main()
     MyDynamicArray.Print();
     cout << "\nArray Size: " << MyDynamicArray.Size();
 
+    int Index = MyDynamicArray.Find(30);
+    if (Index == -1)
+    {
+        cout << "\n\nItem Was Not Found\n";
+    }
+    else
+    {
+        cout << "\n\n30 Is Found At Index: " << Index;
+    }
+
+    MyDynamicArray.DeleteItemByValue(30);
+    cout << "\n\nArray Item After Deleting 30:\n";
+    MyDynamicArray.Print();
+
     MyDynamicArray.DeleteFirstItem();
     cout << "\n\nArray Item After Delete FirstItem:\n";
     MyDynamicArray.Print();
