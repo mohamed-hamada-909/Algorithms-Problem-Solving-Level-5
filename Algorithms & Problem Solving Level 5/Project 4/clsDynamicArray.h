@@ -133,4 +133,14 @@ public:
 		_OriginalArray = _TempArray;
 		return true;
 	}
+
+	void DeleteFirstItem()
+	{
+		return DeleteItem(0);
+	}
+
+	void DeleteLastItem()
+	{
+		return DeleteItem(_space - 1);
+	}
 };
