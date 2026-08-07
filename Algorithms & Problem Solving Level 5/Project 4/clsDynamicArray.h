@@ -170,4 +170,33 @@ public:
 			return true;
 		}
 	}
+
+	bool InsertAt(int index, T value)
+	{
+		if (index < 0 || index >= _space)
+		{
+			return false;
+		}
+
+		_space++;
+		_TempArray = new T[_space];
+
+		//copy before index
+		for (int i = 0; i < index; i++)
+		{
+			_TempArray[i] = _OriginalArray[i];
+		}
+
+		_TempArray[index] = value;
+
+		//copy after index
+		for (int i = index; i < _space; i++)
+		{
+			_TempArray[i + 1] = _OriginalArray[i];
+		}
+
+		delete[] _OriginalArray;
+		_OriginalArray = _TempArray;
+		return true;
+	}
 };

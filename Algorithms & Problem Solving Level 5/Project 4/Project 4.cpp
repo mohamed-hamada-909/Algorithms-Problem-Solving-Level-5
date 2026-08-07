@@ -34,6 +34,11 @@ int main()
     MyDynamicArray.Print();
     cout << "\nArray Size: " << MyDynamicArray.Size();
 
+    MyDynamicArray.InsertAt(2, 500);
+    cout << "\n\nArray After Insert 500 at Index 2:\n";
+    MyDynamicArray.Print();
+    cout << "\nArray Size: " << MyDynamicArray.Size();
+
     int Index = MyDynamicArray.Find(30);
     if (Index == -1)
     {
