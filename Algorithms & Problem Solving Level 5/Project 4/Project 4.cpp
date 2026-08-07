@@ -29,6 +29,11 @@ int main()
     cout << "\nArray Item After Reverse: \n";
     MyDynamicArray.Print();
 
+    MyDynamicArray.DeleteItem(2);
+    cout << "\n\nArray Item After Delete Item(2):\n";
+    MyDynamicArray.Print();
+    cout << "\nArray Size: " << MyDynamicArray.Size();
+
     MyDynamicArray.Clear();
     cout << "\nArray Item After Clear:\n";
     MyDynamicArray.Print();
